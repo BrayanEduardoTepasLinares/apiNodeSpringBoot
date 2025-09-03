@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Formulario Cliente</title>
+</head>
+<body>
+    <h1>Formulario Cliente</h1>
+    <form th:action="@{/cliente/save}" method="post">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" required>
+        <br>
+        <label for="apellido">Apellido:</label>
+        <input type="text" id="apellido" name="apellido" required>
+        <br>
+        <button type="submit">Enviar</button>
+    </form>
+
+    <div>
+        <h2>Resultado:</h2>
+        <p th:if="${clienteResponse != null}" th:text="${clienteResponse.nombreCompleto}"></p>
+    </div>
+</body>
+</html>
