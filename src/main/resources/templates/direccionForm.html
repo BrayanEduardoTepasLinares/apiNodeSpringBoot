@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Formulario direccion</title>
+</head>
+<body>
+<h1>Formulario direccion</h1>
+<form th:action="@{/direccion/save}" method="post">
+    <label for="direccion">direccion:</label>
+    <input type="text" id="direccion" name="direccion" required>
+    <br>
+    <label for="pais">pais:</label>
+    <input type="text" id="pais" name="pais" required>
+    <br>
+    <button type="submit">Enviar</button>
+</form>
+
+<div>
+    <h2>Resultado:</h2>
+    <p th:if="${direccionResponse != null}" th:text="${direccionResponse.direccionCompleta}"></p>
+</div>
+</body>
+</html>
